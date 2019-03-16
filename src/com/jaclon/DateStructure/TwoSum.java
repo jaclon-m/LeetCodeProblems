@@ -1,7 +1,10 @@
 package com.jaclon.DateStructure;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.sun.deploy.util.StringUtils;
+import sun.applet.Main;
+
+import java.util.*;
+import java.util.Objects;
 
 //两数加和
 public class TwoSum {
@@ -27,5 +30,27 @@ public class TwoSum {
             }
         }
         throw new IllegalArgumentException();
+    }
+
+    public static void main(String[] args) {
+        String str = "a,b,c,,";
+        String[] arr = str.split(",");
+        System.out.println(arr.length);
+        StringBuffer sr = new StringBuffer();//线程安全
+        StringBuilder sbr = new StringBuilder();//线程不安全
+
+        List<String> list = new ArrayList <>();
+        list.add("1");
+        list.add("2");
+        list.add("23");
+        for(String s:list){
+            if("1".equals(s)){
+                list.remove(s);
+            }
+
+        }
+        for(String s:list){
+            System.out.println(s);
+        }
     }
 }
