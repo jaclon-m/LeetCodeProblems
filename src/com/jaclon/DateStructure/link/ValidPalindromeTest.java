@@ -1,7 +1,4 @@
-package com.jaclon.DateStructure;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+package com.jaclon.DateStructure.link;
 
 public class ValidPalindromeTest {
 
