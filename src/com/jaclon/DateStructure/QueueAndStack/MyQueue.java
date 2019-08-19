@@ -1,4 +1,4 @@
-package com.jaclon.DateStructure;
+package com.jaclon.DateStructure.QueueAndStack;
 
 import java.util.Stack;
 
