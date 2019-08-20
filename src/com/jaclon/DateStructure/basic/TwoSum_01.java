@@ -1,4 +1,4 @@
-package com.jaclon.DateStructure;
+package com.jaclon.DateStructure.basic;
 
 import com.sun.deploy.util.StringUtils;
 import sun.applet.Main;
@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.Objects;
 
 //两数加和
-public class TwoSum {
+public class TwoSum_01 {
     //暴力法O(n^2)
     public int[] twoSum(int[] nums, int target) {
         for(int i = 0;i<nums.length-1;i++){
@@ -33,24 +33,6 @@ public class TwoSum {
     }
 
     public static void main(String[] args) {
-        String str = "a,b,c,,";
-        String[] arr = str.split(",");
-        System.out.println(arr.length);
-        StringBuffer sr = new StringBuffer();//线程安全
-        StringBuilder sbr = new StringBuilder();//线程不安全
 
-        List<String> list = new ArrayList <>();
-        list.add("1");
-        list.add("2");
-        list.add("23");
-        for(String s:list){
-            if("1".equals(s)){
-                list.remove(s);
-            }
-
-        }
-        for(String s:list){
-            System.out.println(s);
-        }
     }
 }
