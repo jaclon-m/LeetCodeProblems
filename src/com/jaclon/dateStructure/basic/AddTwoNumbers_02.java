@@ -1,4 +1,4 @@
-package com.jaclon.DateStructure.basic;
+package com.jaclon.dateStructure.basic;
 
 /**
  * @author jaclon

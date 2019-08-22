@@ -1,4 +1,4 @@
-package com.jaclon.DateStructure.link;
+package com.jaclon.dateStructure.link;
 
 
 public class PalindromeLinkedList {

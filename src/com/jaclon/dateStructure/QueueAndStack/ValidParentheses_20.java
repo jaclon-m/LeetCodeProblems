@@ -1,8 +1,7 @@
-package com.jaclon.DateStructure.QueueAndStack;
+package com.jaclon.dateStructure.QueueAndStack;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Queue;
 import java.util.Stack;
 
 /**
