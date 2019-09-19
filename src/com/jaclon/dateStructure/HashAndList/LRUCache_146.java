@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * 1. 添加内部类CacheNode，含有pre,head指针
  * 2. 实现关于CacheNode双向链表的四个方法：addNode，removeNode，moveToHead,popTail
- * 3. LRUCahce类中添加成员变量：size,capcity,head,tail,HashMap,实现其构造方法。
+ * 3. LRUCahce类中添加成员变量：size,capacity,head,tail,HashMap,实现其构造方法。
  *  注意，这里加了头尾哨兵指针，减少空值判断情况，可以对比一下没有哨兵时的实现，要简洁很多。
  * 4. 实现LRUCache的get put 方法
  * @author jaclon
@@ -15,13 +15,13 @@ public class LRUCache_146 {
 
     //可以使用map.size()来替代，也可以在put中自己控制
     private int size;
-    private int capcity;
+    private int capacity;
     private CacheNode head,tail;
     private HashMap<Integer,CacheNode> cache = new HashMap <>();
 
     public LRUCache_146(int capcity){
         this.size = 0;
-        this.capcity = capcity;
+        this.capacity = capcity;
         head = new CacheNode();
         // head.pre = null;
         tail = new CacheNode();
@@ -43,7 +43,7 @@ public class LRUCache_146 {
     public void put(int key ,int value){
         CacheNode cacheNode = cache.get(key);
         if(cacheNode == null){
-            if(cache.size() >= capcity){
+            if(cache.size() >= capacity){
 
                 CacheNode res = popTail();
                 cache.remove(res.key);
