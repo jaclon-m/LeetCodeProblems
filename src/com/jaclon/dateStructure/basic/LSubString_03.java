@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * 最长公共字串
  * @author jaclon
  * @date 2019/8/22
  * @time 9:25
