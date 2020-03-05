@@ -1,4 +1,4 @@
-package com.jaclon.dateStructure.strmatching;
+package com.jaclon.datestructure.strmatching;
 
 /**
  * @author jaclon
