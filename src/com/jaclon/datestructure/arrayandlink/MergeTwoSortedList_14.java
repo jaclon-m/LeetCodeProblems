@@ -1,4 +1,6 @@
-package com.jaclon.datestructure.link;
+package com.jaclon.datestructure.arrayandlink;
+
+import com.jaclon.datestructure.basic.ListNode;
 
 /**
  * @author jaclon

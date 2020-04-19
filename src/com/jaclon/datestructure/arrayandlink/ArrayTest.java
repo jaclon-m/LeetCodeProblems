@@ -1,4 +1,4 @@
-package com.jaclon.datestructure.array2link.basic;
+package com.jaclon.datestructure.arrayandlink;
 
 import java.util.Vector;
 
