@@ -1,10 +1,12 @@
-package com.jaclon.datestructure.link;
+package com.jaclon.datestructure.arrayandlink;
 
 /**
  * @author jaclon
  * @date 2019/5/24
  * @time 16:00
  */
+
+import com.jaclon.datestructure.basic.ListNode;
 
 /**
  * Definition for singly-linked list.
@@ -71,10 +73,4 @@ public class ReverseLinkedList_206 {
         return newHead;
         //return head;
     }
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
 }

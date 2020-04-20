@@ -32,9 +32,3 @@ public class AddTwoNumbers_02 {
         return dummyHead.next;
     }
 }
-
-class ListNode {
-      int val;
-     ListNode next;
-     ListNode(int x) { val = x; }
-}

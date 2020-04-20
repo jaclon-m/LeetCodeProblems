@@ -1,4 +1,4 @@
-package com.jaclon.datestructure.link;
+package com.jaclon.datestructure.arrayandlink;
 
 public class ValidPalindromeTest {
 
