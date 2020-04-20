@@ -1,5 +1,7 @@
 package com.jaclon.datestructure.arrayandlink;
 
+import com.jaclon.datestructure.basic.ListNode;
+
 /**
  * @author jaclon
  * @date 2019/6/1
