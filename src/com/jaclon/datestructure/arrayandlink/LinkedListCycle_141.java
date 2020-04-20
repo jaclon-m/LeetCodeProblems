@@ -23,7 +23,9 @@ public class LinkedListCycle_141 {
         if(head == null){
             return false;
         }
-
+        //while (slow.next != null || fast.next.next != null)
+        //fast.next = null的情况会报空指针异常 ==>fast.next!= null &&fast.next.next!=null
+        // 等价于fast != null && fast.next != null
         while (fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
