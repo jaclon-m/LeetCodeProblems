@@ -2,6 +2,9 @@ package com.jaclon.datestructure.geekbandcard;
 
 import com.jaclon.datestructure.basic.ListNode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 /**
  * @author jaclon
@@ -9,19 +12,4 @@ import com.jaclon.datestructure.basic.ListNode;
  */
 public class Solution {
 
-    public boolean hasCycle(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
-        if(head == null){
-            return  false;
-        }
-        while (fast.next != null && fast.next.next != null){
-            slow = slow.next;
-            fast = fast.next.next;
-            if(slow == fast){
-                return  true;
-            }
-        }
-        return  false;
-    }
 }
