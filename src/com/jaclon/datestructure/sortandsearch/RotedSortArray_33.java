@@ -1,4 +1,4 @@
-package com.jaclon.datestructure.search;
+package com.jaclon.datestructure.sortandsearch;
 
 /**
  * @author jaclon

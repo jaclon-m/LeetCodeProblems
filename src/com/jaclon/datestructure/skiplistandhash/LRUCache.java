@@ -1,4 +1,4 @@
-package com.jaclon.datestructure.HashAndList;
+package com.jaclon.datestructure.skiplistandhash;
 
 /**
  * @author jaclon

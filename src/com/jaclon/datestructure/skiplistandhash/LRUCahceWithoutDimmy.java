@@ -1,4 +1,4 @@
-package com.jaclon.datestructure.HashAndList;
+package com.jaclon.datestructure.skiplistandhash;
 
 import java.util.HashMap;
 
