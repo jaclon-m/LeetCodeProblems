@@ -2,7 +2,7 @@
  * Juzifenqi.com Inc.
  * Copyright (c) 2019-2029 All Rights Reserved.
  */
-package com.jaclon.datestructure.QueueAndStack;
+package com.jaclon.datestructure.queueandstack;
 /**
  * @Classname QueueBasedOnLinkedList
  * @Description 队列的链表实现

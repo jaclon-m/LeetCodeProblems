@@ -1,4 +1,4 @@
-package com.jaclon.datestructure.QueueAndStack;
+package com.jaclon.datestructure.queueandstack;
 
 import java.util.HashMap;
 import java.util.Map;
