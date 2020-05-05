@@ -46,5 +46,5 @@ public class ValidBinarysearchTree_98 {
         return  true;
     }
 
-    
+
 }

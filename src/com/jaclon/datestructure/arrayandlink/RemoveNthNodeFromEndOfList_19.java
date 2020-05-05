@@ -8,7 +8,12 @@ import com.jaclon.datestructure.basic.ListNode;
  * @time 10:27
  */
 public class RemoveNthNodeFromEndOfList_19 {
-
+    /**
+     * 这个递归太妙了！
+     * @param head
+     * @param n
+     * @return
+     */
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if(head == null || head.next == null){
             return null;
@@ -54,5 +59,31 @@ public class RemoveNthNodeFromEndOfList_19 {
         }
         second.next = second.next.next;
         return dummy.next;
+    }
+
+    /**
+     * 对比上面的发现使用哨兵-dummy可以简化代码
+     * @param head
+     * @param n
+     * @return
+     */
+    public ListNode removeNthFromEnd3(ListNode head, int n) {
+        if(head == null || head.next == null){
+            return null;
+        }
+        ListNode fast = head;
+        ListNode slow = head;
+        while (n-- >0){
+            fast = fast.next;
+        }
+        if(fast == null){
+            return head.next;
+        }
+        while (fast.next != null){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
+        return head;
     }
 }

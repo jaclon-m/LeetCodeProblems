@@ -1,14 +1,10 @@
 package com.jaclon.datestructure;
 
 import com.jaclon.datestructure.basic.ListNode;
-import com.jaclon.datestructure.basic.TreeNode;
-import com.jaclon.datestructure.binarytree.LevelOrderTraOfBT_102;
-import com.jaclon.datestructure.geekbandcard.Solution;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
 
 /**
  * @author jaclon
