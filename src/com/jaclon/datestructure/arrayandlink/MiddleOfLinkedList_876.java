@@ -6,7 +6,7 @@ import com.jaclon.datestructure.basic.ListNode;
  * @author jaclon
  * @date 2020/5/5
  */
-public class MiddleOfLinkedList {
+public class MiddleOfLinkedList_876 {
     public ListNode middleNode(ListNode head) {
 
         ListNode fast = head;
