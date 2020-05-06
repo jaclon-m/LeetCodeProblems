@@ -1,11 +1,11 @@
 package com.jaclon.datestructure.sortandsearch;
 
 /**
- * 排序二 - 归并排序和快速排序
+ * 归并排序
  * @author jaclon
  * @date 2020/5/6
  */
-public class Sorts2 {
+public class MergeSort {
 
     public static void mergeSort(int[] a, int n){
         mergeSortInternally(a,1,n-1);
