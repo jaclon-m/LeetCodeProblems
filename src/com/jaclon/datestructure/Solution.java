@@ -34,5 +34,46 @@ public class Solution {
         }
         return maxC[n][m];
     }
+    private char[] a = "mitcmu".toCharArray();
+    private char[] b = "mtacnu".toCharArray();
+    private int n = 6;
+    private int m = 6;
+    int[][] maxLcs = new int[n+1][m+1];
+    int[][] dist = new int[n+1][m+1];
+    private void lscDPWithDist(){
+        for (int i = 1; i <= n ; i++) {
+            for (int j = 1; j <= m ; j++) {
+                if(a[i-1] == b[j-1]){
+                    maxLcs[i][j] = maxLcs[i-1][j-1]+1;
+                    dist[i][j] = 1;
+                }else {
+                    if(maxLcs[i][j-1]>maxLcs[i-1][j]){
+                        maxLcs[i][j] = maxLcs[i][j-1];
+                        dist[i][j] = 2;
+                    }else {
+                        maxLcs[i][j] = maxLcs[i-1][j];
+                        dist[i][j] = 3;
+                    }
+                }
+            }
+        }
+    }
 
+    private void print(int i,int j){
+        if(i == 0|| j == 0) return;
+        if(dist[i][j] ==1){
+            print(i-1,j-1);
+            System.out.print(a[i-1]+ "\t");
+        }else if(dist[i][j] == 2){
+            print(i,j-1);
+        }else {
+            print(i-1,j);
+        }
+    }
+
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        s.lscDPWithDist();
+        s.print(s.n,s.m);
+    }
 }
