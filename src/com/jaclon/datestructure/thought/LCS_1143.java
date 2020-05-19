@@ -1,19 +1,11 @@
-package com.jaclon.datestructure;
-
-import com.jaclon.datestructure.basic.ListNode;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.logging.Level;
+package com.jaclon.datestructure.thought;
 
 /**
- * n 皇后问题
- *
+ * 最长公共子序列
  * @author jaclon
- * @date 2020/4/20
+ * @date 2020/5/19
  */
-public class Solution {
+public class LCS_1143 {
 
     public int longestCommonSubsequence(String text1, String text2) {
         char[] a = text1.toCharArray();
@@ -34,5 +26,4 @@ public class Solution {
         }
         return maxC[n][m];
     }
-
 }
