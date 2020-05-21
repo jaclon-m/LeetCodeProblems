@@ -1,4 +1,4 @@
-package com.jaclon.datestructure.binarytree;
+package com.jaclon.datestructure.binarytreeandgraph;
 
 /**
  * 二叉查找树的基本操作 - 查找、插入、删除

@@ -1,4 +1,4 @@
-package com.jaclon.datestructure.binarytree;
+package com.jaclon.datestructure.binarytreeandgraph;
 
 import com.jaclon.datestructure.basic.TreeNode;
 

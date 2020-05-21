@@ -1,4 +1,4 @@
-package com.jaclon.datestructure.binarytree.heap;
+package com.jaclon.datestructure.binarytreeandgraph.heap;
 
 public class Heap {
 
