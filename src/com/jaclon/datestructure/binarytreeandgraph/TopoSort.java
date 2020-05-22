@@ -7,6 +7,7 @@ package com.jaclon.datestructure.binarytreeandgraph;
 import com.jaclon.datestructure.basic.Graph;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -44,10 +45,40 @@ public class TopoSort extends Graph {
     }
 
     /**
-     * TODO
      * 深度优先算法
      */
     public void topoSortByDFS(){
+        List[] reverseAdj = new LinkedList[v];
+        for (int i = 0; i < reverseAdj.length; i++) {
+            reverseAdj[i] = new LinkedList();
+        }
+        //构建逆邻接表
+        for (int i = 0; i < v; i++) {
+            for (int j = 0; j < adj[i].size(); j++) {
+                Integer x = adj[i].get(j);
+                reverseAdj[x].add(i);
+            }
+        }
+        boolean[] visited = new boolean[v];
+        //dfs
+        for (int i = 0; i < v; i++) {
+            if(!visited[i]){
+                visited[i] = true;
+                dfs(i,reverseAdj,visited);
+            }
+        }
 
+    }
+
+    private void dfs(int vertex, List<Integer>[] reverseAdj, boolean[] visited) {
+        for (int j = 0; j < reverseAdj[vertex].size(); j++) {
+            int w = reverseAdj[j].get(j);
+            if(!visited[w]){
+                visited[w] = true;
+                dfs(w,reverseAdj,visited);
+            }
+        }
+        //不满足循环条件的时候表示订单没有依赖了，可以打印
+        System.out.print("->" + vertex);
     }
 }
