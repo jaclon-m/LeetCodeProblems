@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * @Classname Graph
+ * @Classname DijkstraGraph
  * @Description 图
  *
  * @author jaclon
