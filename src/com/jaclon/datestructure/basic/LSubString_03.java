@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * 最长公共字串
+ * 最长不重复子子串（注意是子串不是子序列）
  * @author jaclon
  * @date 2019/8/22
  * @time 9:25
