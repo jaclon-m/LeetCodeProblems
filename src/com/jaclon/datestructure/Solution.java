@@ -4,9 +4,7 @@ import com.jaclon.datestructure.basic.ListNode;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Level;
 
 /**
@@ -17,21 +15,16 @@ import java.util.logging.Level;
  */
 public class Solution {
     public int lengthOfLongestSubstring(String s) {
-        if(s.isEmpty()){
-            return 0;
-        }
-        char[] array = s.toCharArray();
-        int a = 0,b = 0;
-        int maxl = 0;
-        while (b+1 <array.length){
-            if(array[b]!= array[b+1]){
-                int value = b-a+2;
-                maxl = maxl > value?maxl:value;
-            }else {
-                a = b+1;
+        Map<Character,Integer> map = new HashMap <>();
+        int n = s.length();
+        int ans = 0;
+        for (int i = 0, j = 0; j < n ; j++) {
+            if(map.containsKey(s.charAt(j))){
+                i = Math.max(map.get(s.charAt(j)),i);
             }
-            b = b+1;
+            ans = Math.max(j-i+1,ans);
+            map.put(s.charAt(j),j+1);
         }
-        return  maxl;
+        return ans;
     }
 }
