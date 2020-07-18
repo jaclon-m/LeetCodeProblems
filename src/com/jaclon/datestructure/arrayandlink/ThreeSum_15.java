@@ -1,19 +1,21 @@
-package com.jaclon.datestructure;
+/**
+ * Juzifenqi.com Inc.
+ * Copyright (c) 2019-2029 All Rights Reserved.
+ */
+package com.jaclon.datestructure.arrayandlink;
 
-import com.jaclon.datestructure.basic.ListNode;
-
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.*;
-import java.util.logging.Level;
 
 /**
- * n 皇后问题
+ * @Classname ThreeSum_15
+ * @Description 三数求和。
+ *  时间复杂度 O(n^2)
+ *  使用排序的方式可以去重
  *
  * @author jaclon
- * @date 2020/4/20
+ * @date 2020/7/18
  */
-public class Solution {
+public class ThreeSum_15 {
     public List<List<Integer>> threeSum(int[] nums) {
         if(nums == null || nums.length < 3){
             return new ArrayList<>();
