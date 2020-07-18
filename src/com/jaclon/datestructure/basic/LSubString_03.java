@@ -24,7 +24,7 @@ public class LSubString_03 {
         for(int i = 0 ,j = 0 ; j < n ; j++){
 
             if(map.containsKey(s.charAt(j))){
-                // 举例：abba
+                // 举例：abba,这样就不需要remove i前面的元素
                 i = Math.max(map.get(s.charAt(j)),i);
             }
             ans = Math.max(ans,j-i+1);

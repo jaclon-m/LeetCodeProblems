@@ -1,9 +1,11 @@
 package com.jaclon.datestructure;
 
+import com.jaclon.datestructure.basic.ListNode;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.*;
+import java.util.logging.Level;
 
 /**
  * n 皇后问题
@@ -12,32 +14,17 @@ import java.util.Scanner;
  * @date 2020/4/20
  */
 public class Solution {
-    public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
-        Scanner scanner = new Scanner(System.in);
-        int n =scanner.nextInt();
-        for (int i = 0; i < n; i++) {
-            String s = scanner.nextLine();
-            list.add(s);
-        }
-        System.out.println(list.size());
-        for(String s: list){
-            System.out.println(validate(s));
-        }
-    }
-
-    private static String validate(String s) {
+    public int lengthOfLongestSubstring(String s) {
+        Map<Character,Integer> map = new HashMap <>();
         int n = s.length();
-        for (int i = 0; i < n - 2; i++) {
-            if(s.charAt(i) == s.charAt(i+1) && s.charAt(i) == s.charAt(i+2)){
-                s.replaceFirst(s.charAt(i) + "","");
+        int ans = 0;
+        for (int i = 0, j = 0; j < n ; j++) {
+            if(map.containsKey(s.charAt(j))){
+                i = Math.max(map.get(s.charAt(j)),i);
             }
-            if(i < n-3 && s.charAt(i) == s.charAt(i+1) && s.charAt(i+2)==s.charAt(i+3)){
-                s.replaceFirst(s.charAt(i+2)+ "","");
-            }
+            ans = Math.max(j-i+1,ans);
+            map.put(s.charAt(j),j+1);
         }
-        return s;
+        return ans;
     }
-
-
 }
