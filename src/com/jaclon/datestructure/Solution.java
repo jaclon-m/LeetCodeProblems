@@ -14,17 +14,34 @@ import java.util.logging.Level;
  * @date 2020/4/20
  */
 public class Solution {
-    public int lengthOfLongestSubstring(String s) {
-        Map<Character,Integer> map = new HashMap <>();
-        int n = s.length();
-        int ans = 0;
-        for (int i = 0, j = 0; j < n ; j++) {
-            if(map.containsKey(s.charAt(j))){
-                i = Math.max(map.get(s.charAt(j)),i);
-            }
-            ans = Math.max(j-i+1,ans);
-            map.put(s.charAt(j),j+1);
+    public static  int[] returnAll(int[] array1,int[] array2) {
+        if(array1 == null ||array2 == null){
+            throw new NullPointerException();
         }
-        return ans;
+        int n = array1.length;
+        int m = array2.length;
+        int[] union = new int[n+m];
+        int i = 0,j = 0;
+        while (i<n && j<m){
+            if(array1[i] == array2[j]){
+                union[i] = array1[i];
+                i++;
+                j++;
+            }else if(array1[i]<array2[j]){
+                i++;
+            }else {
+                j++;
+            }
+        }
+        if(i == n){
+            for (int k = j; k < m; k++) {
+                union[i+k] = array2[k];
+            }
+        }else if(j == m){
+            for (int k = 0; k < n; k++) {
+                union[j+k] = array1[k];
+            }
+        }
+        return union;
     }
 }
