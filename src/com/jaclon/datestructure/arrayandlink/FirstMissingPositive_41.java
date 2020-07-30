@@ -1,22 +1,13 @@
-package com.jaclon.datestructure;
-
-import com.jaclon.datestructure.basic.ListNode;
-
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.util.*;
-import java.util.logging.Level;
+package com.jaclon.datestructure.arrayandlink;
 
 /**
- * n 皇后问题
- *
+ * https://blog.csdn.net/l1606468155/article/details/89164854
+ * https://zhuanlan.zhihu.com/p/113458584 -- in-place思想
  * @author jaclon
- * @date 2020/4/20
+ * @date 2020/7/29
  */
-public class Solution {
-    public static void main(String[] args) {
+public class FirstMissingPositive_41 {
 
-    }
     public int firstMissingPositive(int[] nums) {
         // nums == null
         if(nums.length == 0) return 1;
@@ -40,5 +31,4 @@ public class Solution {
         }
         return n+1;
     }
-
 }
