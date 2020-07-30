@@ -14,31 +14,38 @@ import java.util.logging.Level;
  * @date 2020/4/20
  */
 public class Solution {
-    public static void main(String[] args) {
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     *     int val;
+     *     ListNode next;
+     *     ListNode() {}
+     *     ListNode(int val) { this.val = val; }
+     *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     * }
+     */
+    public ListNode mergeKLists(ListNode[] lists) {
+        if(lists == null) return null;
 
-    }
-    public int firstMissingPositive(int[] nums) {
-        // nums == null
-        if(nums.length == 0) return 1;
-        int n = nums.length;
-        for (int  i = 0 ; i < n;){
-            if(nums[i] >=1 && nums[i] <= n){
-                if(nums[i] != i+1 && nums[i] != nums[nums[i] - 1]){
-                    //swap(nums[i],nums[nums[i] - 1]);
-                    // pay attention! temp= nums[i] cause ArrayIndexOutOfBoundsException
-                    int temp = nums[nums[i] - 1];
-                    nums[nums[i] - 1] = nums[i];
-                    nums[i] = temp;
-                    continue;
-                }
+        ListNode head = new ListNode(-1);
+        ListNode dummy = head;
+
+        PriorityQueue <ListNode> queue = new PriorityQueue <>((x,y) -> x.val - y.val);
+        for (int i = 0; i < lists.length; i++) {
+            if(lists[i] != null){
+                queue.offer(lists[i]);
             }
-            i++;
         }
 
-        for (int i = 0; i < n; i++) {
-            if(nums[i] != i+1) return i+1;
+        while (!queue.isEmpty()){
+            ListNode node = queue.poll();
+            head.next = node;
+            head = head.next;
+            node = node.next;
+            if(node != null){
+                queue.offer(node);
+            }
         }
-        return n+1;
+        return dummy.next;
     }
-
 }
