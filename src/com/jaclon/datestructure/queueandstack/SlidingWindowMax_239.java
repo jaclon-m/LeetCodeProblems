@@ -1,23 +1,27 @@
-package com.jaclon.datestructure;
+package com.jaclon.datestructure.queueandstack;
 
-import com.jaclon.datestructure.basic.ListNode;
-import sun.security.util.Length;
-
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.util.*;
-import java.util.logging.Level;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.PriorityQueue;
 
 /**
- * n 皇后问题
- *
+ * 滑动窗口最大值
  * @author jaclon
- * @date 2020/4/20
+ * @date 2020/8/2
  */
-public class Solution {
+public class SlidingWindowMax_239 {
+    /**
+     * 单调栈
+     * 1. 维护单调递减栈，使用双端队列
+     * 2. 初始化数据以后，ans 和left指针每次右移
+     * 3. 由于单调栈比比窗口小，每次i++的时候要判断是否要删除单调栈当前元素。
+     * @param nums
+     * @param k
+     * @return
+     */
     public int[] maxSlidingWindow(int[] nums, int k) {
         int[] ans = new int[nums.length - k + 1];
-        Deque<Integer> deque = new ArrayDeque <>();
+        Deque <Integer> deque = new ArrayDeque <>();
         int left = 0,size = nums.length;
 
         for (int i = 0; i < size; i++) {
@@ -47,7 +51,7 @@ public class Solution {
      */
     public int[] maxSlidingWindow2(int[] nums, int k) {
         int[] result = new int[nums.length - k + 1];
-        PriorityQueue<Integer> queue = new PriorityQueue <>(k,(x,y)->y-x);
+        PriorityQueue <Integer> queue = new PriorityQueue <>(k,(x, y)->y-x);
         for (int i = 0; i < k; i++) {
             queue.offer(nums[i]);
         }
@@ -59,4 +63,5 @@ public class Solution {
         }
         return result;
     }
+
 }
