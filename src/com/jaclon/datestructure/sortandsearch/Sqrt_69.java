@@ -1,31 +1,26 @@
 package com.jaclon.datestructure.sortandsearch;
 
 /**
+ * https://www.cnblogs.com/carlosouyang/p/10821793.html 或者参考官网
  * @author jaclon
  * @date 2019/8/29
  */
 public class Sqrt_69 {
 
     public int mySqrt(int x) {
-        //还有bug,暂时未完成
-        int low = 1 ,high = x;
-        //防止溢出
-        while (low <= high){
-            if(high - low == 1){
-                return low;
-            }
-            int mid = low + ((high - low)>>1);
-            if(x/mid > mid){
-
+        int low = 0, high = x, ans = 0;
+        while (low <= high) {
+            int mid = low + (high - low) >> 1;
+            if ((long)mid * mid <= x) {
+                ans = mid;
+                //防止死循环
                 low = mid + 1;
-            }else if(x / mid < mid){
-
+            } else {
+                //防止死循环
                 high = mid - 1;
-            }else {
-                return mid;
             }
         }
-        return -1;
+        return ans;
     }
 
     public int mySqrt2(int x){
