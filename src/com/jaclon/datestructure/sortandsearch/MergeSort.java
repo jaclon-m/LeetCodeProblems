@@ -77,7 +77,7 @@ public class MergeSort {
         for (int i = 0; i < r - q; i++) {
             rightArr[i]= arr[q+i+1];
         }
-        rightArr[r-q+1] = Integer.MAX_VALUE;
+        rightArr[r-q] = Integer.MAX_VALUE;
 
         int k = p;
         int i = 0;

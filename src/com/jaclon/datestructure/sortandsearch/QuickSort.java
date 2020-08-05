@@ -3,6 +3,7 @@ package com.jaclon.datestructure.sortandsearch;
 /**
  * 快速排序
  * 难点在于伪代码实现时 i==j i++的理解
+ * https://blog.csdn.net/nrsc272420199/article/details/82587933
  * @author jaclon
  * @date 2020/5/6
  */
@@ -42,9 +43,9 @@ public class QuickSort {
 
         int low = head;
         int high = tail;
-        int pivot = a[low];
+        //初始判断
         if (low < high) {
-
+            int pivot = a[low];
             while (low<high) {
                 while (low < high && pivot <= a[high]) high--;
                 a[low] = a[high];
