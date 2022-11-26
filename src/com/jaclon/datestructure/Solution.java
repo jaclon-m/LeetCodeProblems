@@ -17,17 +17,18 @@ import java.util.logging.Level;
  * @date 2020/4/20
  */
 public class Solution {
-    public int mySqrt(int x) {
-        int low = 0, high = x, ans = 0;
-        while (low <= high) {
-            int mid = low + (high - low) >> 1;
-            if ((long)mid * mid <= x) {
-                ans = mid;
-                low = mid + 1;
-            } else {
-                high = mid - 1;
+    public int[] twoSum(int[] nums, int target) {
+        int[] result = new int[2];
+        Map<Integer,Integer> sum = new HashMap();
+        for (int i = 0; i < nums.length; i++) {
+            if(sum.containsKey(nums[i])){
+                result[0] = nums[i];
+                result[1] = sum.get(nums[i]);
+                return result;
+            }else {
+                sum.put(target - nums[i],nums[i]);
             }
         }
-        return ans;
+        throw new RuntimeException("error");
     }
 }
